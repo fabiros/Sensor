@@ -1,13 +1,13 @@
 {
   "name": "sensor",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend node server for sensor data Api's",
   "main": "index.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run start"
   },
   "keywords": [],
   "author": "",
