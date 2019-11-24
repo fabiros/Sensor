@@ -8,7 +8,8 @@
   },
   "scripts": {
     "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
-    "start": "npm run build && nodemon"
+    "start": "npm run build && nodemon",
+    "lint": "eslint"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +19,7 @@
     "mongoose": "^5.7.12"
   },
   "devDependencies": {
+    "eslint-config-airbnb": "^18.0.1",
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "dotenv": "^8.2.0",
@@ -26,5 +28,10 @@
     "nodemon": "^2.0.1",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
   }
 }
