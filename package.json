@@ -8,11 +8,11 @@
   },
   "scripts": {
     "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
-    "start": "npm run build && nodemon",
+    "start": "npm run build && nodemon dist",
     "lint": "eslint"
   },
   "keywords": [],
-  "author": "",
+  "author": "fabiros",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
