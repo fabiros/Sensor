@@ -1,6 +1,7 @@
 /* Server */
 import express from 'express'
 import mongoose from 'mongoose'
+import User from './routes'
 
 // Needed for reading from .env
 require('dotenv').config()
@@ -16,4 +17,9 @@ db.once('open', () => console.log('connected to database')) */
 // Define what app needs to use
 app.use(express.json()) // Accept json
 
+
+// Define routes
+app.use('/api', User)
+
+// Start app
 app.listen(3000, () => console.log('server started'))
