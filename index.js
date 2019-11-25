@@ -6,6 +6,7 @@ import mongoose from 'mongoose'
 require('dotenv').config()
 
 const app = express()
+
 // Connect to MongoDB
 /* mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true }); // Connect to database
 const db = mongoose.connection

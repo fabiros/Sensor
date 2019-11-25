@@ -15,7 +15,6 @@
         "sourceType": "module"
     },
     "rules": {
-        "import/no-unassigned-import": 1,
         "no-unused-vars": ["warn", {
             "vars": "all",
             "args": "all",
@@ -23,7 +22,7 @@
         }],
         "indent": [
             "error",
-            "tab"
+            4
         ],
         "linebreak-style": [
             "error",
