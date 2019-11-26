@@ -4,15 +4,17 @@ var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
 
-var _mongoose = require('mongoose');
-
-var _mongoose2 = _interopRequireDefault(_mongoose);
-
 var _routes = require('./routes');
 
 var _routes2 = _interopRequireDefault(_routes);
 
+var _lib = require('./lib');
+
+var _lib2 = _interopRequireDefault(_lib);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// import mongoose from 'mongoose';
 
 // Needed for reading from .env
 require('dotenv').config(); /* Server */
@@ -34,5 +36,5 @@ app.use('/api/user', _routes2.default);
 
 // Start app
 app.listen(3000, function () {
-  return console.log('server started');
+  return _lib2.default.debug('server started');
 });

@@ -15,9 +15,11 @@
     "author": "fabiros",
     "license": "ISC",
     "dependencies": {
+        "dotenv": "^8.2.0",
         "express": "^4.17.1",
         "mongoose": "^5.7.12",
-        "dotenv": "^8.2.0"
+        "winston": "^3.2.1",
+        "winston-daily-rotate-file": "^4.3.0"
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",
