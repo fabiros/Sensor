@@ -1,14 +1,16 @@
-import { Router} from 'express'
-import User from './../routes/index'
+import { Router } from 'express';
+import User from '../models';
 
-const router = Router()
+const router = Router();
 
-const register = (req, res, next) => {
-  if (!req.params.username) return next(new Error('Username must be set.'))
+/* const register = (req, res, next) => {
+    if (!req.params.username) {
+    return next(new Error('Username must be set.'));
+  }
   if (!req.params.password) return next(new Error('Password must be set.'))
   if (!req.params.email) return next(new Error('Email must be set.'))
 
-  User.findByName(req.params.username, function (err, user) {
+  User.findByName(req.params.username, (err, user) => {
     if (err) return next(err)
 
     // if user not found register
@@ -29,19 +31,17 @@ const register = (req, res, next) => {
           status: 'ok'
         })
       })
-    } else return next(new Error('User already registered'))
-  })
-}
-
-
+  } else return next(new Error('User already registered'))
+})
+} */
 
 // Routes
 router.get('/', (req, res) => {
-    res.send('HELLO WORLD')
-})
+    res.send('HELLO WORLD');
+});
 
 router.post('/', (req, res) => {
-    res.send('HELLO WORLD')
-})
+    res.send('HELLO WORLD');
+});
 
-export default router
+export default router;

@@ -1,7 +1,8 @@
 /* Server */
 import express from 'express';
-// import mongoose from 'mongoose';
 import User from './routes';
+
+// import mongoose from 'mongoose';
 
 // Needed for reading from .env
 require('dotenv').config();
