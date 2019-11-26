@@ -36,5 +36,5 @@ app.use('/api/user', _routes2.default);
 
 // Start app
 app.listen(3000, function () {
-  return _lib2.default.debug('server started');
+  return _lib2.default.info('server started');
 });
