@@ -29,9 +29,8 @@ db.once('open', () => console.log('connected to database')) */
 // Define what app needs to use
 app.use(_express2.default.json()); // Accept json
 
-
 // Define routes
-app.use('/api', _routes2.default);
+app.use('/api/user', _routes2.default);
 
 // Start app
 app.listen(3000, function () {
