@@ -1,5 +1,6 @@
 /* Server */
 import express from 'express';
+import bodyParser from 'body-parser';
 import User from './routes';
 import logger from './lib';
 
@@ -17,10 +18,16 @@ db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('connected to database')) */
 
 // Define what app needs to use
-app.use(express.json()); // Accept json
+app.use(bodyParser.json()); // Accept json
+app.use(
+    bodyParser.urlencoded({
+        // Parse URL-encoded bodies
+        extended: true,
+    })
+);
 
 // Define routes
-app.use('/api/user', User);
+app.use('/api/users', User);
 
 // Start app
 app.listen(3000, () => logger.info('server started'));

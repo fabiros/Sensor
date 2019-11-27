@@ -32,7 +32,7 @@ UserSchema.method('findByName', (name, cb) => {
 });
 
 // register the user, do nothing if the user exists
-UserSchema.statics('register', (username, password, email, cb) => {
+UserSchema.statics.register = (username, password, email, cb) => {
     this.findByName(username, (err, user) => {
         if (err) {
             cb(err, null);
@@ -67,6 +67,6 @@ UserSchema.statics('register', (username, password, email, cb) => {
             return cb(null, user);
         }
     });
-});
+};
 
 export default model('User', UserSchema);

@@ -15,13 +15,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var router = (0, _express.Router)();
 
 var register = function register(req, res, next) {
+    console.log(req.body, req.params);
     if (!req.params.username) {
         return next(new Error('Username must be set.'));
     }
-    if (!req.params.password) {
+    if (!req.body.password) {
         return next(new Error('Password must be set.'));
     }
-    if (!req.params.email) {
+    if (!req.body.email) {
         return next(new Error('Email must be set.'));
     }
 
@@ -36,9 +37,7 @@ var register = function register(req, res, next) {
                 if (err || !newUser) {
                     return next(new Error('Something happend. Could not create new User'));
                 }
-                res.json({
-                    status: 'ok'
-                });
+                res.status(200).json(newUser);
                 return next();
             });
         } else {
@@ -51,6 +50,8 @@ var register = function register(req, res, next) {
 router.get('/', function (req, res) {
     res.send('HELLO WORLD');
 });
+
+router.post('/register', register);
 
 router.post('/', function (req, res) {
     res.send('HELLO WORLD');
