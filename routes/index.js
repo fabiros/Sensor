@@ -50,6 +50,8 @@ router.get('/', (req, res) => {
     res.send('HELLO WORLD');
 });
 
+router.post('/register', register);
+
 router.post('/', (req, res) => {
     res.send('HELLO WORLD');
 });
