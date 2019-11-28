@@ -24,7 +24,7 @@ app.use(bodyParser.json()); // Accept json
 app.use(
     bodyParser.urlencoded({
         // Parse URL-encoded bodies
-        extended: false,
+        extended: true,
     })
 );
 app.use(cors());
