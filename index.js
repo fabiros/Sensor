@@ -7,7 +7,7 @@ import logger from './lib';
 // import mongoose from 'mongoose';
 
 // Needed for reading from .env
-require('dotenv').config();
+// require('dotenv').config();
 
 const app = express();
 
@@ -22,12 +22,13 @@ app.use(bodyParser.json()); // Accept json
 app.use(
     bodyParser.urlencoded({
         // Parse URL-encoded bodies
-        extended: true,
+        extended: false,
     })
 );
 
 // Define routes
 app.use('/api/users', User);
 
+const PORT = process.env.SERVER_PORT || 3000;
 // Start app
-app.listen(3000, () => logger.info('server started'));
+app.listen(PORT, () => logger.debug(`server started on Port: ${PORT}`));
