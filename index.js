@@ -1,6 +1,8 @@
 /* Server */
 import express from 'express';
 import bodyParser from 'body-parser';
+import cors from 'cors';
+
 import User from './routes';
 import logger from './lib';
 
@@ -25,6 +27,7 @@ app.use(
         extended: false,
     })
 );
+app.use(cors());
 
 // Define routes
 app.use('/api/users', User);
